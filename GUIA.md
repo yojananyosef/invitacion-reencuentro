@@ -14,7 +14,7 @@ los versículos, la fecha, la hora y el lugar.
 
 ---
 
-## Los 3 archivos
+## Los archivos
 
 | Archivo | Para qué |
 |---|---|
@@ -22,6 +22,10 @@ los versículos, la fecha, la hora y el lugar.
 | `respaldo-1080x1920.jpg` | Foto para **historia / estado** de WhatsApp |
 | `respaldo-1080x1350.jpg` | Foto para **grupos y publicaciones** |
 | `og-imagen.jpg` | La imagen que se ve al compartir el enlace |
+
+Los cuatro están ya publicados. El enlace es:
+
+**https://invitacion-reencuentro.vercel.app**
 
 ---
 
@@ -35,8 +39,7 @@ los versículos, la fecha, la hora y el lugar.
 
 Listo. El mensaje ya va escrito, tú solo lo mandas.
 
-No hace falta publicar nada: el enlace ya está listo. Si prefieres mandarlo
-como archivo, funciona igual.
+No hace falta publicar nada: el enlace ya está arriba.
 
 ---
 
@@ -103,7 +106,7 @@ Tres semanas no es mucho. **Empieza el martes 13**, aunque falten confirmaciones
 ## Cómo va la asistencia
 
 En la página hay un botón **Sí, ahí voy**. Cuando alguien lo toca, se le abre
-WhatsApp con el mensaje ya escrito y te llega al número de la iglesia.
+WhatsApp con el mensaje ya escrito y llega al número de la iglesia.
 
 Tú solo tienes que **contestar esos mensajes**. No hay lista que mantener.
 
