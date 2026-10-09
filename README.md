@@ -9,18 +9,22 @@ Iglesia Adventista del Séptimo Día Empedrado
 
 | Archivo | Qué es | Peso |
 |---|---|---|
-| **`index.html`** | **La invitación.** Un solo archivo, sin dependencias. | 749 KB |
-| `respaldo-1080x1920.jpg` | Foto vertical para estado/historia de WhatsApp | 304 KB |
-| `respaldo-1080x1350.jpg` | Foto para grupos y publicaciones | 237 KB |
-| `og-imagen.jpg` | Miniatura del enlace (WhatsApp, Facebook) | 86 KB |
+| **`index.html`** | **La invitación.** Un solo archivo, sin dependencias. | 881 KB |
+| `respaldo-1080x1920.jpg` | Foto vertical para estado/historia de WhatsApp | 312 KB |
+| `respaldo-1080x1350.jpg` | Foto para grupos y publicaciones | 243 KB |
+| `og-imagen.jpg` | Miniatura del enlace (WhatsApp, Facebook) | 88 KB |
 | `GUIA.md` | Instrucciones para la iglesia, sin nada técnico | — |
-| `PROPUESTA.md` | La propuesta original | — |
+| `vercel.json` | Configuración de despliegue y caché | — |
 | `index.base.html` | La plantilla. **Se edita esto, no `index.html`.** | — |
-| `herramientas/` | Scripts para regenerar todo | — |
+| `herramientas/` | Scripts para regenerar y verificar todo | — |
 
 ---
 
 ## Ver la invitación ahora
+
+**Está publicada en https://invitacion-reencuentro.vercel.app**
+
+Para verla en local:
 
 ```bash
 xdg-open /home/j/invitacion-reencuentro/index.html
@@ -56,29 +60,31 @@ ENLACE_TRANSMISION: '',           // si hay Facebook/Zoom en vivo
 CREDITOS: 'Nos vemos el 31 de octubre',
 ```
 
-### 3 · Dominio, para que el enlace se vea al compartirlo
+### 3 · La vista previa ya está
 
-En `index.base.html`, línea 14:
+**https://invitacion-reencuentro.vercel.app**
 
-```html
-<meta property="og:image" content="REEMPLAZA_CON_TU_DOMINIO/og-imagen.jpg">
-```
-
-Sin esto el enlace se comparte bien, pero **WhatsApp lo muestra pelado**: sin
-imagen y sin título. Es lo que decide si alguien lo abre.
+Los metadatos de WhatsApp apuntan a ese dominio, así que el enlace se comparte
+con imagen, título y descripción. Si algún día cambia el dominio, hay que
+actualizar `og:image` y `og:url` en `index.base.html` y volver a desplegar.
 
 ---
 
-## Publicar el enlace (gratis)
+## Publicar
 
-| Opción | Cómo |
-|---|---|
-| **GitHub Pages** | Subir `index.html` y `og-imagen.jpg` a un repo, activar Pages. Dominio propio opcional. El enlace no caduca. |
-| **Netlify Drop** | Arrastrar la carpeta a netlify.com/drop. 2 minutos. |
-| **Cloudflare Pages** | Dashboard → nuevo proyecto → subir carpeta. |
+Ya está en **Vercel** (https://invitacion-reencuentro.vercel.app) y el código
+está en **https://github.com/yojananyosef/invitacion-reencuentro** (público).
 
-Mientras no esté publicada, el `.html` se puede mandar por WhatsApp como
-documento: abre bien, pero sin vista previa.
+```bash
+# redesplegar después de cambiar algo
+python3 herramientas/armar.py    # arma index.html
+vercel --prod --yes              # publica
+git add -A && git commit -m "..." && git push
+```
+
+El repo es público, así que `index.html`, las fotos y las herramientas quedan
+a la vista. `PROPUESTA.md` está en el `.gitignore` a propósito: es el documento
+comercial, no la invitación.
 
 ---
 
@@ -116,6 +122,10 @@ celular de 3x necesita ~915 píxeles reales para una lámina de 305px. Por eso
 se re-muestrean con Lanczos + realce suave, y **el ancho de cada lámina está
 limitado en CSS** para no ampliar más de lo que el original da. Estirar era lo
 que las volvía borrosas.
+
+Por eso `index.html` pesa 881 KB: lleva las tres pinturas dentro. Es el precio
+de que sea un solo archivo que se pueda mandar por WhatsApp sin adjuntar nada
+más. En el navegador se ven igual de nítidas que si fueran archivos aparte.
 
 Para que se vean realmente nítidas harían falta los originales en alta
 resolución.
