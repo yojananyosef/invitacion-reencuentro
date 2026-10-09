@@ -54,7 +54,7 @@ Copia y pega. **No cambies la fecha ni la hora** sin avisar.
 > El sábado 31 de octubre nos volvemos a reunir en la Iglesia Adventista
 > Empedrado.
 >
-> 🕘 9:30 a. m. — 11:00 a. m.
+> 🕘 9:30 a. m. — 12:00 m.
 > ⛪ Iglesia Adventista Empedrado
 >
 > "Al que a mí viene, no le echaré fuera." — Juan 6:37
@@ -66,15 +66,15 @@ Copia y pega. **No cambies la fecha ni la hora** sin avisar.
 ### Para mandar por privado
 
 > Hermano(a), te escribo. Vamos a tener un encuentro especial el
-> sábado 31 de octubre a las 9:30 en la iglesia. Va a ser bonito verte.
-> Toca aquí: (enlace)
+> sábado 31 de octubre, de 9:30 a. m. a 12:00 m., en la iglesia.
+> Va a ser bonito verte. Toca aquí: (enlace)
 >
 > Sin presión, pero nos haría mucha falta que nos acompañes.
 
 ### Recordatorio el día 30
 
 > Mañana es el día 🙌
-> Sábado 31 de octubre, 9:30 a. m.
+> Sábado 31 de octubre, de 9:30 a. m. a 12:00 m.
 > Iglesia Adventista Empedrado.
 > El enlace es el mismo: (enlace)
 

@@ -36,19 +36,22 @@ También funciona abriéndola desde el explorador de archivos del celular.
 
 ## Pendiente antes de publicar
 
-### 1 · Confirmar la hora ⚠️ **bloqueante**
+### 1 · La hora ✅ **confirmada**
 
-Benedicta escribió en el chat *"desde las 9:30 horas oh 11:00 horas"*, pero su
-póster dice **11:00 a. m.** Ahora está en **9:30 – 11:00**. Si se invita a la
-hora equivocada, se arruina el evento.
+**9:30 a. m. a 12:00 m.** Lo confirmó Benedicta: *"9:30 - 12:00"*. La hora de
+inicio es la de la Escuela Sabática, no la del sermón.
 
 Está en el bloque `CONFIG` de `index.base.html`:
 
 ```js
 INICIO: '2026-10-31T09:30:00-03:00',
-FIN:    '2026-10-31T11:00:00-03:00',
-HORA:   '9:30 a. m. a 11:00 a. m.',
+FIN:    '2026-10-31T12:00:00-03:00',
+HORA:   '9:30 a. m. a 12:00 m.',
 ```
+
+> Ojo: la hora aparece en varios lugares (la página, los tres textos de
+> `GUIA.md`, las fotos y los metadatos). Si alguna vez cambia, hay que
+> cambiarla en todos. `grep -rn "12:00" .` los encuentra.
 
 ### 2 · Los demás datos
 
