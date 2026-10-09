@@ -1,0 +1,15 @@
+# Derivados: se regeneran con los scripts de herramientas/
+.assets/
+.fuentes/
+.capturas/
+
+# Documento interno de trabajo: es la propuesta comercial, no la invitación.
+# No va en un repo público. Si la quieres publicar, quítala de acá.
+PROPUESTA.md
+
+# Python
+__pycache__/
+*.pyc
+
+# .DS_Store
+.DS_Store

@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reencuentro · Sábado 31 de octubre · Iglesia Adventista Empedrado</title>
+<meta name="description" content="Invitación al Reencuentro. Sábado 31 de octubre de 2026, 9:30 a. m., Iglesia Adventista del Séptimo Día Empedrado. ¿Vale la pena regresar? Alguien ora por ti.">
+
+<!-- ══ VISTA PREVIA AL COMPARTIR POR WHATSAPP ══
+     Reemplaza REEMPLAZA_CON_TU_DOMINIO por la dirección donde publiques esto.
+     Sin esto el enlace se comparte igual, pero WhatsApp lo muestra pelado. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Reencuentro · 31 de octubre">
+<meta property="og:description" content="¿Vale la pena regresar? Alguien ora por ti. Te esperamos el sábado 31 en la Iglesia Adventista Empedrado.">
+<meta property="og:image" content="REEMPLAZA_CON_TU_DOMINIO/og-imagen.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#100e0c">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════════════════════════════════════════════════════════════════
+   REENCUENTRO — Iglesia Adventista Empedrado
+   Dirección visual tomada de ellen-white-cronologia.html:
+   tinta cálida casi negra, latón para el acento, Spectral para el texto
+   largo e Inter para las etiquetas. Filetes de 1px como separadores, sin
+   tarjetas ni sombras: es una pieza editorial, no una landing.
+   ══════════════════════════════════════════════════════════════════════ */
+:root{
+  --ink:#100e0c;
+  --ink2:#171412;
+  --ink3:#1e1a17;
+  --paper:#e9e1d1;
+  --paper2:#cfc4ae;
+  --paper3:#9a8f7c;
+  --brass:#c9a227;
+  --brass2:#e8cd7e;
+  --rule:#332c25;
+  --serif:'Spectral','Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',Georgia,serif;
+  --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+
+  --ancho:min(33rem,100% - 2.6rem);
+  --curva:cubic-bezier(.22,.68,.24,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--serif);font-weight:300;color:var(--paper2);
+  font-size:17px;line-height:1.72;background:var(--ink);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+::selection{background:var(--brass);color:var(--ink)}
+em{color:var(--brass2);font-style:italic}
+strong{color:var(--paper);font-weight:600}
+
+/* ═══ LÁMINAS ═══
+   Las pinturas se muestran SIEMPRE a su resolución y con su proporción
+   real: nunca se estiran. Las tres son pequeñas (700px la más ancha), así
+   que van como láminas enmarcadas, no como fondos a pantalla completa.
+   En móvil, estirarlas era lo que las volvía borrosas. */
+.lamina{
+  display:block;margin:0 auto;position:relative;
+  border:1px solid var(--brass);
+  background:var(--ink2);
+  box-shadow:0 30px 70px -34px rgba(0,0,0,.9);
+}
+/* height:auto es imprescindible: sin él gana el atributo height del <img>
+   y la pintura se deforma. */
+.lamina img{display:block;width:100%;height:auto}
+/* esquina de lámina de museo */
+.lamina::after{
+  content:'';position:absolute;top:-1px;right:-1px;width:20px;height:20px;
+  background:linear-gradient(225deg,var(--brass) 0 1.5px,transparent 1.5px);
+  border-top:2px solid var(--brass2);border-right:2px solid var(--brass2);
+  pointer-events:none;
+}
+.lamina figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:34px 16px 11px;
+  background:linear-gradient(180deg,transparent,rgba(16,14,12,.93) 62%);
+  font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--brass2);text-align:right;
+}
+
+/* ═══ TIPOGRAFÍA ═══ */
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.06;margin:0;letter-spacing:-.02em}
+.etiqueta{
+  font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--brass);
+}
+.antetitulo{
+  font-family:var(--sans);font-size:10.5px;font-weight:400;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--paper3);
+}
+
+/* ═══ FILETES ═══ */
+.filo{display:flex;align-items:center;justify-content:center;gap:18px;color:var(--brass)}
+.filo::before,.filo::after{
+  content:'';height:1px;flex:1;max-width:8rem;
+  background:linear-gradient(90deg,transparent,var(--brass));opacity:.55;
+}
+.filo::after{background:linear-gradient(270deg,transparent,var(--brass))}
+.filo span{font-size:11px;line-height:1;display:block;letter-spacing:.1em}
+
+/* ═══ BLOQUES ═══ */
+.bloque{padding:clamp(3.2rem,10vw,5.4rem) 1.3rem}
+.interior{width:var(--ancho);margin:0 auto}
+.centrado{text-align:center}
+.separador{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+
+/* ═══ PORTADA ═══ */
+/* justify-content:flex-end pegaba la lámina al borde de abajo en pantallas
+   cortas. center + padding la deja siempre en su sitio. */
+.portada{
+  position:relative;min-height:100svh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:calc(3rem + env(safe-area-inset-top)) 1.4rem
+          calc(3rem + env(safe-area-inset-bottom));
+  overflow:hidden;
+}
+/* Partículas: los ríos de luz, igual que la referencia */
+#flujo{position:absolute;inset:0;width:100%;height:100%;opacity:.62;pointer-events:none}
+/* max-width sola no acota: en un viewport de 390px el bloque se iría a 31rem
+   (496px) y el texto de una línea se saldría por los dos lados. */
+/* es un bloque normal, no flex: sin esto, los hijos de ancho completo
+   (el sello, la lámina) se pegan a la izquierda aunque el texto sí esté
+   centrado — que es como se veía en la primera captura. */
+.portada-cuerpo{
+  position:relative;z-index:2;width:100%;max-width:min(31rem,100%);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.portada .antetitulo{
+  display:block;margin:0 auto 1.5rem;max-width:26ch;
+  line-height:1.9;
+}
+h1.titulo{
+  font-size:clamp(3.2rem,15vw,5.6rem);font-weight:300;letter-spacing:-.045em;
+  line-height:.94;color:var(--paper);
+}
+h1 .fecha-bajo{
+  display:block;margin-top:1.15rem;
+  font-family:var(--sans);font-size:clamp(10px,2.9vw,13px);font-weight:400;
+  letter-spacing:.4em;text-transform:uppercase;color:var(--brass);
+}
+.lema{
+  margin:1.5rem auto 0;max-width:26ch;
+  font-size:clamp(1.02rem,4.3vw,1.24rem);font-style:italic;color:var(--paper2);
+}
+.capsula{
+  display:inline-block;margin-top:1.7rem;padding:.55rem 1.15rem;
+  border:1px solid var(--brass);border-radius:999px;
+  font-family:var(--sans);font-size:10.5px;font-weight:500;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--brass2);
+}
+.capsula b{color:var(--paper);font-weight:600}
+
+.lam-grande{width:min(21rem,84vw);margin-top:2.6rem}
+
+.senal{
+  position:relative;z-index:2;margin-top:2rem;
+  display:flex;flex-direction:column;align-items:center;gap:.8rem;
+}
+.senal i{display:block;width:1px;height:34px;background:linear-gradient(180deg,transparent,var(--brass))}
+.senal span{
+  font-family:var(--sans);font-size:9.5px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--paper3);
+}
+
+/* ═══ VERSÍCULO ═══ */
+.versiculo .comilla{
+  font-family:var(--serif);font-size:4.6rem;line-height:.5;color:var(--brass);
+  opacity:.34;display:block;margin-bottom:1.5rem;
+}
+.versiculo h2{
+  font-style:italic;font-size:clamp(1.5rem,6.4vw,2.24rem);line-height:1.34;color:var(--paper);
+}
+.versiculo .sub{
+  font-style:italic;font-size:clamp(1rem,4.1vw,1.12rem);
+  color:var(--brass2);margin-top:1rem;
+}
+.cita{
+  margin-top:1.5rem;font-family:var(--sans);font-size:10.5px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--paper3);
+}
+
+/* ═══ MOMENTO A SANGRE ═══
+   Cuadro entero de la pintura con el texto sobre un velo. Rompe el bloque de
+   texto. La imagen va a su proporción dentro de un alto dado: si el ancho
+   no alcanza, se estrecha el alto, no se deforma. */
+/* El momento es un bloque normal: la lámina y el texto se apilan.
+   Con position:absolute sobre el texto, este se salía del lienzo horizontal
+   porque `left:50%` + translate(-50%) no está acotado por el padding. */
+.momento{
+  position:relative;overflow:hidden;isolation:isolate;
+  padding:clamp(3.4rem,13vw,5.6rem) 0;
+}
+/* El ancho se limita en CSS además de en la imagen, y el límite viene del
+   original: la pintura son 500px de ancho, re-muestreados a 950. A 3x de
+   densidad, 316px de ancho es lo máximo que sale a resolución real. Pasarse
+   de ahí es lo que la volvía borrosa. */
+.momento-lam{
+  position:relative;z-index:1;
+  width:min(19.75rem,100% - 2.6rem);
+  margin:0 auto;
+}
+.momento .velo{
+  position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(180deg,var(--ink) 0%,rgba(16,14,12,.18) 18%,
+                            rgba(16,14,12,.3) 48%,rgba(16,14,12,.86) 82%,var(--ink) 100%);
+}
+/* El texto sube sobre la lámina con margen negativo. La magnitud depende del
+   alto de la pintura, así que se calcula en JS (ver `ajustar_momentos`) en
+   lugar de adivinarlo con vw: con un valor fijo la cita "Lucas 15:24" se
+   caía por debajo del marco. */
+.momento-texto{
+  position:relative;z-index:3;
+  width:var(--ancho);margin:-9rem auto 0;
+  text-align:center;
+  text-shadow:0 2px 26px rgba(8,7,6,.98);
+  transition:margin-top .4s var(--curva);
+}
+.momento-texto p{
+  margin:0;font-size:clamp(1.14rem,5vw,1.46rem);font-style:italic;
+  line-height:1.38;color:var(--paper);
+}
+.momento-texto .cita{margin-top:1.1rem;color:var(--brass2)}
+
+/* ═══ CARTA — la página respira en papel claro ═══ */
+.carta{
+  background:var(--paper);color:#241c12;
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+}
+.carta .comilla{
+  font-family:var(--serif);font-size:4rem;line-height:.5;color:var(--brass);
+  opacity:.5;display:block;margin-bottom:1.2rem;
+}
+.carta .firma{
+  margin:0 0 1.2rem;font-size:clamp(1.14rem,4.9vw,1.32rem);
+  font-style:italic;color:#5c4520;
+}
+.carta p{margin:0 0 1.05rem;font-size:1rem;line-height:1.8;color:rgba(36,28,18,.7)}
+.carta p strong{color:#241c12;font-weight:600}
+.carta .destacado{
+  margin-top:1.7rem;padding-top:1.5rem;
+  border-top:1px solid rgba(51,44,37,.26);
+  font-size:clamp(1.05rem,4.4vw,1.2rem);font-style:italic;line-height:1.5;
+  color:#241c12;
+}
+.carta .destacado em{color:#6b4e1c}
+.carta .cerrador{
+  margin-top:1.5rem;font-family:var(--sans);font-size:10px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:rgba(36,28,18,.48);
+}
+
+/* ═══ DATOS ═══ */
+.datos{margin-top:2.2rem;text-align:left;border-top:1px solid var(--brass)}
+.dato{padding:1.2rem .1rem;border-bottom:1px solid var(--rule)}
+.dato-cab{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.dato-cab svg{width:14px;height:14px;color:var(--brass);flex:0 0 auto}
+.dato-cab span{
+  font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--brass);
+}
+.dato-val{font-size:1.18rem;line-height:1.34;color:var(--paper)}
+.dato-nota{margin-top:.28rem;font-family:var(--sans);font-size:12.5px;line-height:1.55;color:var(--paper3)}
+
+/* ═══ CUENTA REGRESIVA ═══ */
+.cuenta{
+  display:grid;grid-template-columns:repeat(4,1fr);margin-top:1.9rem;
+  border-top:1px solid var(--brass);border-bottom:1px solid var(--brass);
+}
+.unidad{padding:1.1rem .2rem .9rem;text-align:center;position:relative}
+.unidad+.unidad::before{
+  content:'';position:absolute;left:0;top:24%;bottom:24%;width:1px;background:var(--rule);
+}
+.unidad b{
+  display:block;font-family:var(--serif);font-weight:300;
+  font-size:clamp(1.5rem,7.4vw,2.05rem);line-height:1;color:var(--paper);
+  font-variant-numeric:tabular-nums;font-feature-settings:"tnum";
+}
+.unidad span{
+  display:block;margin-top:.5rem;font-family:var(--sans);font-size:9px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--paper3);
+}
+.tiempo-restante{margin-top:1.1rem;font-size:.95rem;color:var(--paper3)}
+
+/* ═══ ACCIONES ═══ */
+.acciones{display:grid;gap:.65rem;margin-top:2.1rem}
+.boton{
+  display:flex;align-items:center;justify-content:center;gap:.65rem;
+  min-height:3.4rem;padding:.85rem 1.2rem;
+  background:none;border:1px solid var(--rule);color:var(--paper2);
+  border-radius:2px;font-family:var(--sans);font-size:13px;font-weight:500;
+  text-decoration:none;cursor:pointer;text-align:center;
+  transition:border-color .2s,background .2s,color .2s,transform .16s var(--curva);
+  -webkit-tap-highlight-color:transparent;
+}
+.boton:active{transform:scale(.978)}
+.boton svg{width:17px;height:17px;flex:0 0 auto}
+.boton--wa{
+  background:linear-gradient(135deg,#25a65a,#128c7e);color:#fff;border-color:transparent;
+  box-shadow:0 10px 26px -12px rgba(37,166,90,.55);
+}
+.boton--brass{background:var(--brass);color:#1a1508;border-color:transparent}
+.boton--linea:hover{border-color:var(--brass);color:var(--brass2);background:rgba(201,162,39,.06)}
+.boton--vertical{flex-direction:column;gap:.4rem;padding:1rem 1.2rem}
+.rot{display:flex;flex-direction:column;align-items:center;gap:.15rem}
+.boton small{font-size:11px;font-weight:400;line-height:1.4;opacity:.82;max-width:16rem}
+.filas{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.filas .boton{font-size:12.5px;padding:.85rem .4rem;white-space:nowrap}
+/* Margen extra abajo: la barra flotante tapa la última línea en pantallas
+   cortas, y esto no alcanza si queda pegada al borde. */
+.nota{
+  margin-top:1.2rem;margin-bottom:.5rem;
+  font-family:var(--sans);font-size:12px;line-height:1.65;
+  color:var(--paper3);text-align:center;
+}
+
+/* ═══ CIERRE ═══
+   Rejilla de líneas como en la referencia: sin tarjetas, el aire y los
+   filetes hacen el trabajo. */
+.cierre{position:relative;overflow:hidden;text-align:center;isolation:isolate}
+.versos{margin:0 0 2.4rem}
+.verso{padding:1.1rem 0;border-top:1px solid var(--rule)}
+.verso:last-child{border-bottom:1px solid var(--rule)}
+.verso p{margin:0;font-size:clamp(1.04rem,4.5vw,1.2rem);font-style:italic;line-height:1.5;color:var(--paper2)}
+.verso span{
+  display:block;margin-top:.6rem;font-family:var(--sans);font-style:normal;
+  font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);
+}
+.espera{
+  margin-top:2.4rem;font-family:var(--serif);font-weight:300;letter-spacing:-.025em;
+  font-size:clamp(1.7rem,7.2vw,2.36rem);color:var(--paper);
+}
+.espera-nota{margin-top:.9rem;font-style:italic;font-size:clamp(1rem,4.1vw,1.12rem);color:var(--paper2)}
+.pie{
+  margin-top:3rem;padding-top:1.9rem;border-top:1px solid var(--rule);
+  display:flex;flex-direction:column;align-items:center;gap:1rem;
+}
+.pie .nom{font-size:1.02rem;line-height:1.5;color:var(--paper)}
+.pie .det{
+  font-family:var(--sans);font-size:10px;font-weight:400;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--paper3);
+}
+
+/* ═══ SELLO ═══ */
+.sello{position:relative;display:grid;place-items:center;width:72px;height:72px;color:var(--brass)}
+.sello svg{width:38px;height:38px;position:relative;z-index:1}
+.sello::before{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(201,162,39,.34)}
+.sello::after{content:'';position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(201,162,39,.16)}
+.sello i{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--brass);opacity:.8}
+.sello i:nth-child(1){top:-2px;left:50%;margin-left:-1.5px}
+.sello i:nth-child(2){bottom:-2px;left:50%;margin-left:-1.5px}
+.sello i:nth-child(3){left:-2px;top:50%;margin-top:-1.5px}
+.sello i:nth-child(4){right:-2px;top:50%;margin-top:-1.5px}
+
+/* ═══ BARRA FLOTANTE ═══ */
+.barra{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));
+  background:linear-gradient(180deg,rgba(16,14,12,0),rgba(16,14,12,.94) 45%);
+  transform:translateY(115%);transition:transform .45s var(--curva);
+}
+.barra.visible{transform:translateY(0)}
+.barra .boton{width:100%}
+
+/* Barra de progreso de lectura */
+#progreso{
+  position:fixed;top:0;left:0;right:0;height:2px;background:var(--brass);
+  transform:scaleX(0);transform-origin:0;z-index:120;
+}
+
+/* ═══ REVELADO AL BAJAR ═══
+   Sin JS, todo visible: la invitación se lee completa siempre. */
+.js .revelar{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .9s var(--curva),transform .9s var(--curva);
+}
+.js .revelar.visible{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .revelar{opacity:1;transform:none}
+}
+@media (min-width:40rem){
+  :root{--ancho:min(37rem,100% - 4rem)}
+  body{font-size:17.5px}
+}
+</style>
+</head>
+
+<body>
+<div id="progreso" aria-hidden="true"></div>
+
+<!-- ═══════════ 1 · PORTADA ═══════════ -->
+<header class="portada">
+  <canvas id="flujo" aria-hidden="true"></canvas>
+
+  <div class="portada-cuerpo">
+    <div class="sello" aria-hidden="true">
+      <svg viewBox="0 0 253.71 227.63" fill="currentColor"><path d="M67.68,120.38c-.1-9.91,2.8-18.41,20.8-36.41l39-39c10.4-10.4,19.1-19.29,19.1-29V.67c0-.89-1.1-.89-1.2,0-2.6,12.4-7.5,17.3-17.8,27.61L82.28,73.47c-17.1,17-19.5,35.1-15.8,46.91C66.78,121.38,67.68,121.47,67.68,120.38Zm64.2,38.9c0,.89,1,.89,1.2,0,2.6-12.5,7.6-17.4,17.8-27.61L166,116.78c19.8-19.9,10.7-39-.9-44.31-1-.5-1.4.31-.6,1,9.3,8,6.5,21.5-5.2,33.2L151,115c-10.4,10.31-19.1,19.2-19.1,29Zm81.8,26.6L168,178.17l-17.1,17.11c-10.4,10.39-19,19.3-19,29V227c0,.7.9.9,1.2.11,3.2-8.7,13.9-18.11,33.5-14.8,0,0,85.4,14.8,86.1,14.8a.9.9,0,0,0,1-.61.79.79,0,0,0-.2-.8c-.3-.39-39.8-39.8-39.8-39.8Zm-107.5,1h15a.66.66,0,0,0,.6-.6c0-7.9-6-13.31-30-9.2L40,186S.58,225.37.28,225.78a.79.79,0,0,0-.1,1.1.81.81,0,0,0,.8.2c.7-.11,86.1-14.8,86.1-14.8,19.6-3.31,30.3,6,33.5,14.8.3.8,1.2.7,1.2-.11v-29.5a.66.66,0,0,0-.6-.6l-15,.1a.64.64,0,0,1-.6-.6v-8.9a.65.65,0,0,1,.6-.6Zm26.8,25.9a36.3,36.3,0,0,1,6.9-15.81h-7.5a.65.65,0,0,0-.6.61v15.2c0,.89,1.1.89,1.2,0Zm13.6-158.6c0-.91-1.1-.91-1.2,0-2.6,12.39-7.5,17.29-17.8,27.6l-39.8,39.69c-19.8,19.81-10.7,39,.9,44.31,1,.5,1.4-.4.6-1-9.3-8-6.5-21.61,5.2-33.2l33-33c10.4-10.4,19.1-19.3,19.1-29Zm-19.1,17.49c10.4-10.3,19-19.2,19.1-29V27.27c0-.9-1.1-.9-1.2,0-2.6,12.4-7.5,17.4-17.8,27.7L86.68,95.78c-19.8,19.8-23.3,39-13.2,51.4.7.8,1.4.3,1-.7-6.7-15.1,9.3-31.1,16.9-38.7Zm37.6,82.5-14.3,14.2c-6.5,6.5-12.3,12.4-15.8,18.4h14.1l1.7-1.7,20.5-20.5c17.1-16.9,19.5-35,15.8-46.8-.3-1-1.2-1.1-1.2,0,.1,9.9-2.8,18.4-20.8,36.4Zm-2.8-24-11.4,11.5c-10.4,10.4-19.1,19.4-19.1,29.11v15.3c0,.89,1.1.89,1.2,0,2.6-12.4,7.5-17.4,17.8-27.7L167,142.17c19.8-19.8,23.3-39,13.2-51.4-.7-.8-1.4-.3-1,.7C185.88,106.57,169.88,122.57,162.28,130.17Zm83.5,68.2h1.1l1.7,3h1.5l-2-3.3a2,2,0,0,0,1.3-2c0-1.5-.8-2.2-2.7-2.2h-2.2v7.5h1.3v-3Zm0-3.5h.8c1,0,1.4.3,1.4,1.2,0,.7-.5,1.2-1.4,1.2h-.9v-2.4Zm1,9a6.3,6.3,0,1,0-6.3-6.3,6.08,6.08,0,0,0,5.87,6.3Zm0-11.7a5.4,5.4,0,1,1,0,10.8,5.31,5.31,0,0,1-5.4-5.23h0v-.16a5.24,5.24,0,0,1,5.11-5.39h.29Z"/></svg>
+      <i></i><i></i><i></i><i></i>
+    </div>
+
+    <span class="antetitulo">Iglesia Adventista del Séptimo Día · Empedrado</span>
+
+    <h1 class="titulo">
+      Reencuentro
+      <span class="fecha-bajo">31 de octubre de 2026</span>
+    </h1>
+
+    <div class="filo" style="margin:1.4rem 0 .2rem" aria-hidden="true"><span>&#10022;</span></div>
+
+    <p class="lema">&iquest;Vale la pena regresar?<br>Alguien ora por ti.</p>
+
+    <span class="capsula">S&aacute;bado <b>31</b> &middot; 9:30 a. m.</span>
+
+    <figure class="lamina lam-grande">
+      <img src="IMAGEN_SEGUNDA" width="700" height="290" alt="La Segunda Venida: Cristo en el centro de un arco&iacute;ris de luz, rodeado de &aacute;ngeles, sobre la multitud que lo espera en la tierra.">
+      <figcaption>La Segunda Venida</figcaption>
+    </figure>
+
+    <div class="senal"><i></i><span>Invitación</span></div>
+  </div>
+</header>
+
+<!-- ═══════════ 2 · VERSÍCULO ═══════════ -->
+<section class="bloque versiculo centrado">
+  <div class="interior revelar">
+    <span class="comilla" aria-hidden="true">&ldquo;</span>
+    <h2>Venid a mí todos los que estáis cansados y cargados, y yo os daré descanso.</h2>
+    <p class="sub">&mdash; Así que no quiero que nadie se quede fuera.</p>
+    <p class="cita">Mateo 11:28</p>
+  </div>
+</section>
+
+<!-- ═══════════ 3 · MOMENTO — EL BUEN PASTOR ═══════════ -->
+<section class="momento">
+  <figure class="lamina momento-lam">
+    <img loading="lazy" src="IMAGEN_PASTOR" width="500" height="557" alt="Jesús el Buen Pastor, con su cayado, inclinándose hacia la oveja perdida entre los riscos.">
+  </figure>
+  <div class="velo"></div>
+  <div class="momento-texto revelar">
+    <p>El que se había perdido<br>ya fue encontrado.</p>
+    <p class="cita">Lucas 15:24</p>
+  </div>
+</section>
+
+<!-- ═══════════ 4 · CARTA ═══════════ -->
+<section class="bloque carta">
+  <div class="interior revelar">
+    <span class="comilla" aria-hidden="true">&ldquo;</span>
+    <p class="firma">Mi querido(a) hermano(a),</p>
+
+    <p>
+      Hemos orado al cielo para que Dios pueda mediar por su <strong>Espíritu Santo</strong>,
+      y sensibilice vuestro corazón a esta invitación, realizada con todo el
+      amor de Cristo, nuestro Salvador.
+    </p>
+
+    <p>
+      No importa cuánto tiempo haya pasado, ni las cosas que quedaron a medias.
+      <strong>Este encuentro es para ti.</strong> Nadie va a preguntarte nada.
+      Nadie te va a juzgar. Solo vamos a estar juntos, como siempre fue.
+    </p>
+
+    <p class="destacado">
+      No tienes que cambiar para llegar a Jesús.<br>
+      <em>Ve a Jesús primero, y luego Él te irá cambiando con su amor.</em>
+    </p>
+
+    <p class="cerrador">Con cariño, la Iglesia Adventista Empedrado</p>
+  </div>
+</section>
+
+<!-- ═══════════ 5 · DATOS ═══════════ -->
+<section class="bloque centrado" style="padding-bottom:1rem">
+  <div class="interior">
+    <div class="revelar">
+      <div class="filo" aria-hidden="true"><span>&#10013;</span></div>
+      <p class="etiqueta" style="margin-top:1.2rem">Cuándo y dónde</p>
+    </div>
+
+    <div class="datos">
+      <div class="dato revelar">
+        <div class="dato-cab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/></svg>
+          <span>Día</span>
+        </div>
+        <div class="dato-val" id="t-dia">Sábado 31 de octubre de 2026</div>
+      </div>
+
+      <div class="dato revelar">
+        <div class="dato-cab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3.2 2"/></svg>
+          <span>Hora</span>
+        </div>
+        <div class="dato-val" id="t-hora">9:30 a. m. a 11:00 a. m.</div>
+        <div class="dato-nota">Te recomendamos llegar 15 minutos antes</div>
+      </div>
+
+      <div class="dato revelar">
+        <div class="dato-cab">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          <span>Lugar</span>
+        </div>
+        <div class="dato-val" id="t-lugar">Iglesia Adventista Empedrado</div>
+        <div class="dato-nota" id="t-dir">Toca “Cómo llegar” para abrir la ruta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ 6 · CUENTA REGRESIVA ═══════════ -->
+<section class="bloque centrado" style="padding-top:0">
+  <div class="interior revelar">
+    <p class="etiqueta">Falta muy poco</p>
+
+    <div class="cuenta" id="cuenta">
+      <div class="unidad"><b id="c-d">--</b><span>Días</span></div>
+      <div class="unidad"><b id="c-h">--</b><span>Horas</span></div>
+      <div class="unidad"><b id="c-m">--</b><span>Min</span></div>
+      <div class="unidad"><b id="c-s">--</b><span>Seg</span></div>
+    </div>
+
+    <p class="tiempo-restante" id="restante">&nbsp;</p>
+  </div>
+</section>
+
+<!-- ═══════════ 7 · ACCIONES ═══════════ -->
+<section class="bloque centrado" style="padding-top:0">
+  <div class="interior revelar">
+    <div class="acciones">
+      <a class="boton boton--wa" id="btn-share" href="#" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5v-.5l-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .2 5.2.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.6 0 11.9-5.2 11.9-11.8a11.8 11.8 0 0 0-3.5-8.4"/></svg>
+        Compartir por WhatsApp
+      </a>
+
+      <a class="boton boton--brass boton--vertical" id="btn-asistir" href="#" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5 9.2 17.3 4 12.1"/></svg>
+        <span class="rot">
+          Sí, ahí voy
+          <small>Se abre WhatsApp con el mensaje listo</small>
+        </span>
+      </a>
+
+      <div class="filas">
+        <a class="boton boton--linea" id="btn-calendar" href="#" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="1.5"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M9 14.5h6"/></svg>
+          Calendario
+        </a>
+        <a class="boton boton--linea" id="btn-maps" href="#" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.4 7-11a7 7 0 1 0-14 0c0 5.6 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          Cómo llegar
+        </a>
+      </div>
+
+      <a class="boton boton--linea" id="btn-envivo" href="#" rel="noopener" style="display:none">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="14" height="13" rx="1.5"/><path d="M16.5 11 21.5 8v8l-5-3"/></svg>
+        Ver la transmisión en vivo
+      </a>
+    </div>
+
+    <p class="nota">
+      Si no puedes ir en persona, también nos escribes por aquí y te decidimos.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════ 8 · CIERRE ═══════════ -->
+<section class="bloque cierre">
+  <figure class="lamina" style="width:min(17rem,72vw);margin:0 auto 3rem">
+    <img loading="lazy" src="IMAGEN_CORDERO" width="500" height="606" alt="Jesús sonriendo mientras sostiene en sus brazos a un corderito.">
+    <figcaption>El Cordero</figcaption>
+  </figure>
+
+  <div class="interior">
+    <div class="versos revelar">
+      <div class="verso">
+        <p>&laquo;Al que a mí viene, no le echaré fuera.&raquo;</p>
+        <span>Juan 6:37</span>
+      </div>
+      <div class="verso">
+        <p>&laquo;No he venido a llamar a justos, sino a pecadores arrepentidos.&raquo;</p>
+        <span>Marcos 2:17</span>
+      </div>
+    </div>
+
+    <div class="revelar">
+      <div class="filo" aria-hidden="true"><span>&#10022;</span></div>
+      <h2 class="espera">&iexcl;Ya te esperamos!</h2>
+      <p class="espera-nota">El Padre sigue guard&aacute;ndote un lugar.</p>
+    </div>
+
+    <div class="pie revelar">
+      <div class="sello" aria-hidden="true">
+        <svg viewBox="0 0 253.71 227.63" fill="currentColor"><path d="M67.68,120.38c-.1-9.91,2.8-18.41,20.8-36.41l39-39c10.4-10.4,19.1-19.29,19.1-29V.67c0-.89-1.1-.89-1.2,0-2.6,12.4-7.5,17.3-17.8,27.61L82.28,73.47c-17.1,17-19.5,35.1-15.8,46.91C66.78,121.38,67.68,121.47,67.68,120.38Zm64.2,38.9c0,.89,1,.89,1.2,0,2.6-12.5,7.6-17.4,17.8-27.61L166,116.78c19.8-19.9,10.7-39-.9-44.31-1-.5-1.4.31-.6,1,9.3,8,6.5,21.5-5.2,33.2L151,115c-10.4,10.31-19.1,19.2-19.1,29Zm81.8,26.6L168,178.17l-17.1,17.11c-10.4,10.39-19,19.3-19,29V227c0,.7.9.9,1.2.11,3.2-8.7,13.9-18.11,33.5-14.8,0,0,85.4,14.8,86.1,14.8a.9.9,0,0,0,1-.61.79.79,0,0,0-.2-.8c-.3-.39-39.8-39.8-39.8-39.8Zm-107.5,1h15a.66.66,0,0,0,.6-.6c0-7.9-6-13.31-30-9.2L40,186S.58,225.37.28,225.78a.79.79,0,0,0-.1,1.1.81.81,0,0,0,.8.2c.7-.11,86.1-14.8,86.1-14.8,19.6-3.31,30.3,6,33.5,14.8.3.8,1.2.7,1.2-.11v-29.5a.66.66,0,0,0-.6-.6l-15,.1a.64.64,0,0,1-.6-.6v-8.9a.65.65,0,0,1,.6-.6Zm26.8,25.9a36.3,36.3,0,0,1,6.9-15.81h-7.5a.65.65,0,0,0-.6.61v15.2c0,.89,1.1.89,1.2,0Zm13.6-158.6c0-.91-1.1-.91-1.2,0-2.6,12.39-7.5,17.29-17.8,27.6l-39.8,39.69c-19.8,19.81-10.7,39,.9,44.31,1,.5,1.4-.4.6-1-9.3-8-6.5-21.61,5.2-33.2l33-33c10.4-10.4,19.1-19.3,19.1-29Zm-19.1,17.49c10.4-10.3,19-19.2,19.1-29V27.27c0-.9-1.1-.9-1.2,0-2.6,12.4-7.5,17.4-17.8,27.7L86.68,95.78c-19.8,19.8-23.3,39-13.2,51.4.7.8,1.4.3,1-.7-6.7-15.1,9.3-31.1,16.9-38.7Zm37.6,82.5-14.3,14.2c-6.5,6.5-12.3,12.4-15.8,18.4h14.1l1.7-1.7,20.5-20.5c17.1-16.9,19.5-35,15.8-46.8-.3-1-1.2-1.1-1.2,0,.1,9.9-2.8,18.4-20.8,36.4Zm-2.8-24-11.4,11.5c-10.4,10.4-19.1,19.4-19.1,29.11v15.3c0,.89,1.1.89,1.2,0,2.6-12.4,7.5-17.4,17.8-27.7L167,142.17c19.8-19.8,23.3-39,13.2-51.4-.7-.8-1.4-.3-1,.7C185.88,106.57,169.88,122.57,162.28,130.17Zm83.5,68.2h1.1l1.7,3h1.5l-2-3.3a2,2,0,0,0,1.3-2c0-1.5-.8-2.2-2.7-2.2h-2.2v7.5h1.3v-3Zm0-3.5h.8c1,0,1.4.3,1.4,1.2,0,.7-.5,1.2-1.4,1.2h-.9v-2.4Zm1,9a6.3,6.3,0,1,0-6.3-6.3,6.08,6.08,0,0,0,5.87,6.3Zm0-11.7a5.4,5.4,0,1,1,0,10.8,5.31,5.31,0,0,1-5.4-5.23h0v-.16a5.24,5.24,0,0,1,5.11-5.39h.29Z"/></svg>
+        <i></i><i></i><i></i><i></i>
+      </div>
+      <p class="nom">Iglesia Adventista<br>del Séptimo Día Empedrado</p>
+      <p class="det" id="t-creditos">Nos vemos el 31 de octubre</p>
+    </div>
+  </div>
+</section>
+
+<div class="barra" id="barra">
+  <a class="boton boton--wa" id="btn-share-2" href="#" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1s-.7 1-.9 1.2c-.2.2-.3.2-.6.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6c.1-.2.2-.3.3-.5v-.5l-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.4 1.9.8 2.7.9 3.6.8.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4M12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 1 1 8.3 4.6M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .2 5.2.2 11.8c0 2.1.6 4.1 1.6 5.9L0 24l6.5-1.7a11.8 11.8 0 0 0 5.5 1.4h.1c6.6 0 11.9-5.2 11.9-11.8a11.8 11.8 0 0 0-3.5-8.4"/></svg>
+    Compartir la invitación
+  </a>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════
+   ⚙️  CONFIGURACIÓN — aquí se cambian los datos del evento
+   ══════════════════════════════════════════════════════════════════════ */
+var CONFIG = {
+
+  /* Fecha y hora, zona horaria de Chile (-03:00 en horario de verano). */
+  INICIO: '2026-10-31T09:30:00-03:00',
+  FIN:    '2026-10-31T11:00:00-03:00',
+
+  /* Lo que se muestra en las tarjetas. */
+  DIA:   'Sábado 31 de octubre de 2026',
+  HORA:  '9:30 a. m. a 11:00 a. m.',
+  LUGAR: 'Iglesia Adventista Empedrado',
+
+  /* Texto corto bajo el lugar (opcional). Déjalo vacío ('') si no va. */
+  DIR_CORTA: '',
+
+  /* Enlace de Google Maps. Es lo que abre el botón "Cómo llegar". */
+  ENLACE_MAPS: 'https://maps.app.goo.gl/HHZeLZEiyYPyNw5G6?g_st=ac',
+
+  /* Número que recibe las confirmaciones: solo dígitos, con código de país. */
+  WHATSAPP_CONTACTO: '56968585169',
+
+  /* Si hay transmisión en vivo, pega el enlace y el botón aparece solo. */
+  ENLACE_TRANSMISION: '',
+
+  /* Pie de página. */
+  CREDITOS: 'Nos vemos el 31 de octubre'
+};
+
+/* ───────── mensaje que se comparte ───────── */
+var MENSAJE =
+  '¡Reencuentro! 🌅\n\n' +
+  'El sábado 31 de octubre nos volvemos a reunir en la Iglesia Adventista Empedrado.\n\n' +
+  '🕘 9:30 a. m. — 11:00 a. m.\n' +
+  '⛪ Iglesia Adventista Empedrado\n\n' +
+  '"Al que a mí viene, no le echaré fuera." — Juan 6:37\n\n' +
+  '¿Vale la pena regresar? Alguien ora por ti.\n' +
+  'Te esperamos, ven tal como estás. 👇\n' + RUTA();
+
+var CONFIRMAR =
+  'Hola! 🕊️ Quiero confirmar mi asistencia al Reencuentro del sábado 31 de octubre, ' +
+  '9:30 a. m. en la Iglesia Adventista Empedrado. ¿Cómo puedo ayudar?';
+
+function RUTA(){
+  return location.protocol.indexOf('http') === 0 ? location.href : '';
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   No tocar de aquí para abajo
+   ══════════════════════════════════════════════════════════════════════ */
+(function(){
+  document.documentElement.className = 'js';
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* ── textos configurables ── */
+  $('t-dia').textContent = CONFIG.DIA;
+  $('t-hora').textContent = CONFIG.HORA;
+  $('t-lugar').textContent = CONFIG.LUGAR;
+  $('t-creditos').textContent = CONFIG.CREDITOS;
+  var tDir = $('t-dir');
+  if (CONFIG.DIR_CORTA){ tDir.textContent = CONFIG.DIR_CORTA; }
+
+  /* ── 1 · cuenta regresiva ── */
+  var fin = new Date(CONFIG.INICIO).getTime();
+  var dias = $('c-d'), horas = $('c-h'), min = $('c-m'), seg = $('c-s');
+  var restante = $('restante');
+  var dosDig = function(n){ return (n < 10 ? '0' : '') + n; };
+
+  function tic(){
+    var ms = fin - Date.now();
+    if (ms <= 0){
+      $('cuenta').innerHTML =
+        '<div style="grid-column:1/-1;text-align:center;padding:1.5rem 0">' +
+        '<span style="font-family:var(--serif);font-size:1.3rem;color:var(--paper)">' +
+        'Hoy es el día. Te esperamos.</span></div>';
+      restante.textContent = '';
+      clearInterval(reloj);
+      return;
+    }
+    var s = Math.floor(ms / 1000);
+    dias.textContent  = Math.floor(s / 86400);
+    horas.textContent = dosDig(Math.floor(s / 3600) % 24);
+    min.textContent   = dosDig(Math.floor(s / 60) % 60);
+    seg.textContent   = dosDig(s % 60);
+
+    var hs = Math.round(ms / 3600000);
+    restante.textContent = hs >= 48 ? 'Faltan ' + hs + ' horas'
+      : hs >= 1 ? 'Falta ' + hs + (hs === 1 ? ' hora' : ' horas')
+      : 'Faltan ' + Math.max(1, Math.ceil(ms / 60000)) + ' minutos';
+  }
+  var reloj = setInterval(tic, 1000);
+  tic();
+
+  /* ── 2 · los ríos de luz ──
+     Partículas de latón siguiendo una curva lenta, como en la referencia.
+     Si el canvas no está disponible (o el usuario pidió menos movimiento),
+     la portada se ve igual: solo falta la luz de fondo. */
+  (function(){
+    var c = $('flujo');
+    if (!c || !c.getContext) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var x = c.getContext('2d'), W, H, DPR = Math.min(2, window.devicePixelRatio || 1);
+    function rs(){
+      W = c.clientWidth; H = c.clientHeight;
+      c.width = W * DPR; c.height = H * DPR;
+      x.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+    rs();
+    addEventListener('resize', rs);
+
+    var N = 46, P = [];
+    for (var i = 0; i < N; i++){
+      P.push({ t: Math.random(), o: Math.random(),
+               s: .18 + Math.random() * .42,
+               r: Math.random() * 1.6 + .5,
+               ph: Math.random() * 6.28 });
+    }
+    function curve(t){
+      return H * (0.34 + 0.20 * Math.sin(t * 6.2831 + 0.4)
+                       + 0.10 * Math.sin(t * 6.2831 * 2.7 + 1.9)
+                       + 0.05 * Math.sin(t * 6.2831 * 5.3));
+    }
+    function frame(ts){
+      x.clearRect(0, 0, W, H);
+      var T = (ts || 0) / 26000;
+      for (var i = 0; i < N; i++){
+        var p = P[i];
+        p.t += 0.00042 * p.s;
+        if (p.t > 1.06) p.t = -0.06;
+        if (p.t < -0.06) p.t = 1.06;
+        var px = p.t * W * 1.10 - W * 0.05, py = curve(p.t * 1.05 + p.ph * 0.04);
+        var g = x.createRadialGradient(px, py, 0, px, py, p.r * 4.5);
+        var al = (0.14 + 0.34 * p.o) * (0.55 + 0.45 * Math.sin(T * 6.28 + p.ph));
+        g.addColorStop(0,   'rgba(226,196,120,' + (al * 0.9).toFixed(3) + ')');
+        g.addColorStop(.35, 'rgba(201,162,39,'  + (al * 0.32).toFixed(3) + ')');
+        g.addColorStop(1,   'rgba(201,162,39,0)');
+        x.fillStyle = g;
+        x.beginPath(); x.arc(px, py, p.r * 4.5, 0, 6.2832); x.fill();
+      }
+      // nervio central
+      x.beginPath();
+      for (var s = 0; s <= 200; s++){
+        var t = s / 200, px2 = t * W, py2 = curve(t * 1.05);
+        s ? x.lineTo(px2, py2) : x.moveTo(px2, py2);
+      }
+      var lg = x.createLinearGradient(0, 0, W, 0);
+      lg.addColorStop(0,  'rgba(201,162,39,0)');
+      lg.addColorStop(.5, 'rgba(201,162,39,.17)');
+      lg.addColorStop(1,  'rgba(201,162,39,0)');
+      x.strokeStyle = lg; x.lineWidth = 1; x.stroke();
+      requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  })();
+
+  /* ── 3 · compartir por WhatsApp ── */
+  function compartir(e){
+    if (navigator.share && location.protocol !== 'file:'){
+      e.preventDefault();
+      navigator.share({ text: MENSAJE, title: 'Reencuentro' }).catch(function(){});
+      return;
+    }
+    location.href = 'https://wa.me/?text=' + encodeURIComponent(MENSAJE);
+  }
+  $('btn-share').addEventListener('click', compartir);
+  $('btn-share-2').addEventListener('click', compartir);
+
+  /* ── 4 · confirmar asistencia ── */
+  var num = (CONFIG.WHATSAPP_CONTACTO || '').replace(/\D/g, '');
+  $('btn-asistir').href = num
+    ? 'https://wa.me/' + num + '?text=' + encodeURIComponent(CONFIRMAR)
+    : 'https://wa.me/?text=' + encodeURIComponent(CONFIRMAR);
+
+  /* ── 5 · agregar al calendario ── */
+  var compacto = function(s){ return s.replace(/[-:]/g, ''); };
+  $('btn-calendar').href =
+    'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+    '&text=' + encodeURIComponent('Reencuentro · Iglesia Adventista Empedrado') +
+    '&dates=' + compacto(CONFIG.INICIO) + '/' + compacto(CONFIG.FIN) +
+    '&details=' + encodeURIComponent(
+      CONFIG.DIA + ' — ' + CONFIG.HORA + '\n' + CONFIG.LUGAR +
+      '\n\n"Al que a mí viene, no le echaré fuera." Juan 6:37') +
+    '&location=' + encodeURIComponent(CONFIG.ENLACE_MAPS);
+
+  /* archivo .ics generado en el momento: funciona también sin internet */
+  $('btn-calendar').addEventListener('click', function(e){
+    if (location.protocol === 'file:') return;
+    e.preventDefault();
+    var sello = function(d){
+      return d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    };
+    var esc = function(s){
+      return String(s).replace(/([,;\\])/g, '\\$1').replace(/\n/g, '\\n');
+    };
+    var ics = [
+      'BEGIN:VCALENDAR', 'VERSION:2.0',
+      'PRODID:-//Iglesia Adventista Empedrado//Reencuentro//ES',
+      'BEGIN:VEVENT', 'UID:reencuentro-20261031@iad.empedrado',
+      'DTSTAMP:' + sello(new Date()),
+      'DTSTART:' + sello(new Date(CONFIG.INICIO)),
+      'DTEND:'   + sello(new Date(CONFIG.FIN)),
+      'SUMMARY:' + esc(CONFIG.DIA),
+      'LOCATION:' + esc(CONFIG.LUGAR) + ' — maps.app.goo.gl',
+      'DESCRIPTION:Reencuentro\\, ' + esc(CONFIG.HORA),
+      'URL:' + esc(RUTA() || 'https://maps.app.goo.gl/HHZeLZEiyYPyNw5G6'),
+      'END:VEVENT', 'END:VCALENDAR'
+    ].join('\r\n');
+    var url = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+    var a = document.createElement('a');
+    a.href = url; a.download = 'Reencuentro-31-octubre.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  });
+
+  /* ── 6 · cómo llegar ── */
+  $('btn-maps').href = CONFIG.ENLACE_MAPS ||
+    ('https://www.google.com/maps/search/?api=1&query=' +
+     encodeURIComponent(CONFIG.LUGAR));
+
+  /* ── 7 · transmisión en vivo ── */
+  if (CONFIG.ENLACE_TRANSMISION){
+    var b = $('btn-envivo');
+    b.href = CONFIG.ENLACE_TRANSMISION;
+    b.style.display = 'flex';
+  }
+
+  /* ── 7b · el texto del momento se sube según la altura de su lámina ──
+     El alto varía con el ancho del celular, así que un margen fijo en CSS
+     dejaba la cita fuera del marco. Se mide la lámina y se sube el texto
+     lo justo para que quede dentro, con un margen de seguridad abajo. */
+  function ajustarMomentos(){
+    var momentos = document.querySelectorAll('.momento');
+    for (var i = 0; i < momentos.length; i++){
+      var sec = momentos[i];
+      var lam = sec.querySelector('.lamina');
+      var txt = sec.querySelector('.momento-texto');
+      if (!lam || !txt) continue;
+      var altoTexto = txt.offsetHeight;
+      var altoLam = lam.getBoundingClientRect().height;
+      /* el texto ocupa la parte de abajo de la lámina, dejando aire abajo */
+      var subida = Math.max(5 * 16, Math.min(altoTexto + 44, altoLam * 0.42));
+      txt.style.marginTop = (-subida) + 'px';
+    }
+  }
+  ajustarMomentos();
+  addEventListener('resize', ajustarMomentos);
+  addEventListener('load', ajustarMomentos);
+
+  /* ── 8 · barra de progreso + barra flotante ──
+     La barra flotante se retira al llegar a los botones propios: ahí ya hay
+     uno de compartir, y si quedara taparía el cierre. */
+  var barra = $('barra');
+  var progreso = $('progreso');
+  var portada = document.querySelector('.portada');
+  var acciones = document.querySelector('.acciones');
+
+  function alDesplazar(){
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    if (progreso){
+      progreso.style.transform =
+        'scaleX(' + (alto > 0 ? window.scrollY / alto : 0) + ')';
+    }
+    barra.classList.toggle('visible',
+      window.scrollY > portada.offsetHeight * 0.72 &&
+      window.scrollY < acciones.offsetTop - 120);
+  }
+  addEventListener('scroll', alDesplazar, { passive: true });
+  addEventListener('resize', alDesplazar);
+  alDesplazar();
+
+  /* ── 9 · revelado al bajar ──
+     Si algo falla, se muestra todo: es preferible una invitación estática
+     a una invitación en blanco. */
+  function mostrarTodo(){
+    var todos = document.querySelectorAll('.revelar');
+    for (var i = 0; i < todos.length; i++) todos[i].classList.add('visible');
+  }
+  try {
+    var metas = document.querySelectorAll('.revelar');
+    if ('IntersectionObserver' in window){
+      var obs = new IntersectionObserver(function(lote){
+        lote.forEach(function(e){
+          if (e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -5% 0px' });
+      for (var j = 0; j < metas.length; j++) obs.observe(metas[j]);
+    } else {
+      mostrarTodo();
+    }
+  } catch (err) {
+    mostrarTodo();
+  }
+})();
+</script>
+</body>
+</html>
