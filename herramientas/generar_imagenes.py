@@ -431,40 +431,61 @@ def feed():
 
 
 def miniatura():
-    """1200x630 — lo que WhatsApp muestra al lado del enlace."""
-    w, h = 1200, 630
-    im = fondo(w, h, luz=(0.62, 0.42))
-    panel = 470
-    d = ImageDraw.Draw(im)
-    d.line([(panel, 0), (panel, h)], fill=ORO, width=2)
+    """1200x1200 — la vista previa del enlace.
 
-    cx = panel // 2
-    sello(126, 68)["dibuja"](im, cx, 74)
-    d.text((cx, 244), IGLESIA[0], font=f(MONTSERRAT, 19, "Medium"),
+    POR QUÉ CUADRADA Y NO 1200x630
+    ------------------------------
+    WhatsApp no muestra la imagen completa: la recorta a un cuadrado chiquito
+    al lado del título. Con una imagen de 1200x630 el recorte se lleva el
+    título "Reencuentro" y la mitad del logo — que es justo lo que se veía en
+    el chat. Cuadrada entra entera en cualquier recorte.
+
+    La información importante va en el CENTRO, dentro de un cuadrado de 900px,
+    que es lo que sobrevive al recorte más agresivo.
+    """
+    w = h = 1200
+    im = fondo(w, h, luz=(0.5, 0.34))
+
+    # lo que importa vive dentro de este cuadrado central
+    cx, cy = w / 2, h / 2 - 20
+    util = 700          # el título entra completo en un recorte de 700px
+
+    sello(150, 80)["dibuja"](im, cx, cy - 372)
+    d = ImageDraw.Draw(im)
+    d.text((cx, cy - 176), IGLESIA[0], font=f(MONTSERRAT, 21, "Medium"),
            fill=PAPEL_2, anchor="ma")
-    d.text((cx, 272), IGLESIA[1], font=f(MONTSERRAT, 19, "Medium"),
+    d.text((cx, cy - 146), IGLESIA[1], font=f(MONTSERRAT, 21, "Medium"),
            fill=PAPEL_2, anchor="ma")
-    d.line([(cx - 86, 330), (cx + 86, 330)], fill=ORO, width=2)
-    d.text((cx, 358), LEMA[0], font=f(PLAYFAIR_I, 29, "Regular"),
+
+    texto_centro(TITULO, ajustar(PLAYFAIR, TITULO, util, 122, "Medium"),
+                 (233, 225, 209), ORO)["dibuja"](im, cx, cy - 62)
+    filete(150)["dibuja"](im, cx, cy + 84)
+
+    d.text((cx, cy + 128), LEMA[0], font=f(PLAYFAIR_I, 34, "Regular"),
            fill=ORO_CLARO, anchor="ma")
-    d.text((cx, 402), LEMA[1], font=f(PLAYFAIR_I, 29, "Regular"),
+    d.text((cx, cy + 178), LEMA[1], font=f(PLAYFAIR_I, 34, "Regular"),
            fill=ORO_CLARO, anchor="ma")
-    d.text((cx, 500), PIE, font=f(MONTSERRAT, 19, "Medium"),
+
+    capsula("SÁBADO 31 DE OCTUBRE", f(MONTSERRAT, 25, "Medium"),
+            5)["dibuja"](im, cx, cy + 252)
+
+    d.text((cx, cy + 372), HORA,
+           font=ajustar(PLAYFAIR, HORA, util, 36, "Medium"),
+           fill=PAPEL, anchor="ma")
+    d.text((cx, cy + 426), LUGAR,
+           font=ajustar(PLAYFAIR, LUGAR, util, 36, "Medium"),
+           fill=PAPEL, anchor="ma")
+
+    d.line([(cx - 120, cy + 502), (cx + 120, cy + 502)], fill=ORO, width=2)
+    d.text((cx, cy + 528), PIE, font=f(MONTSERRAT, 20, "Medium"),
            fill=PAPEL_3, anchor="ma")
 
-    dcx = (panel + w) / 2
-    util = w - panel - 96
-    texto_centro(TITULO, ajustar(PLAYFAIR, TITULO, util, 108, "Medium"),
-                 (233, 225, 209), ORO)["dibuja"](im, dcx, 96)
-    filete(112)["dibuja"](im, dcx, 246)
-    capsula("31 DE OCTUBRE", f(MONTSERRAT, 24, "Medium"), 4)["dibuja"](im, dcx, 284)
-    d.text((dcx, 408), HORA, font=ajustar(PLAYFAIR, HORA, util, 33, "Medium"),
-           fill=PAPEL, anchor="ma")
-    d.text((dcx, 456), LUGAR, font=ajustar(PLAYFAIR, LUGAR, util, 33, "Medium"),
-           fill=PAPEL, anchor="ma")
-
     grano(im)
-    guardar(im, "og-imagen.jpg")
+    # El nombre lleva versión a propósito: vercel.json manda las fotos con
+    # caché de un año inmutable, y WhatsApp además guarda la vista previa por
+    # su cuenta. Con el mismo nombre seguirían viendo la imagen anterior
+    # aunque la subamos nueva. Al cambiar el diseño, se cambia el v2 → v3.
+    guardar(im, "og-imagen-v2.jpg")
 
 
 print("Imágenes de la invitación:")

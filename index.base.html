@@ -7,17 +7,25 @@
 <meta name="description" content="Invitación al Reencuentro. Sábado 31 de octubre de 2026, 9:30 a. m., Iglesia Adventista del Séptimo Día Empedrado. ¿Vale la pena regresar? Alguien ora por ti.">
 
 <!-- ══ VISTA PREVIA AL COMPARTIR POR WHATSAPP ══
-     Estas 5 líneas son lo que WhatsApp muestra al compartir el enlace.
-     Si cambia el dominio, hay que actualizar og:image y og:url.
-     La imagen debe pesar menos de 300 KB para que WhatsApp la cargue. -->
+     Esto es lo que WhatsApp muestra al compartir el enlace. Dos cosas que no
+     son obvias y por eso están anotadas:
+
+     · Si cambia el dominio, hay que actualizar og:image y og:url.
+     · La imagen es cuadrada (1200x1200) a propósito. WhatsApp recorta la
+       vista previa a un cuadrado chiquito: con una imagen apaisada se llevaba
+       el título y la mitad del logo. Y el nombre lleva versión porque
+       WhatsApp y el navegador guardan la imagen en caché aunque la subas
+       nueva: al redesigned el archivo, se sube el nombre (v2 → v3).
+     · La imagen debe pesar menos de 300 KB para que WhatsApp la cargue. -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CL">
 <meta property="og:url" content="https://invitacion-reencuentro.vercel.app/">
 <meta property="og:title" content="Reencuentro · Sábado 31 de octubre">
 <meta property="og:description" content="¿Vale la pena regresar? Alguien ora por ti. Te esperamos el sábado 31 de octubre en la Iglesia Adventista Empedrado.">
-<meta property="og:image" content="https://invitacion-reencuentro.vercel.app/og-imagen.jpg">
+<meta property="og:image" content="https://invitacion-reencuentro.vercel.app/og-imagen-v2.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Reencuentro · Sábado 31 de octubre · Iglesia Adventista Empedrado">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#100e0c">
 
@@ -165,7 +173,36 @@ h1 .fecha-bajo{
 }
 .capsula b{color:var(--paper);font-weight:600}
 
-.lam-grande{width:min(21rem,84vw);margin-top:2.6rem}
+/* ═══ LÁMINA DE PORTADA ═══
+   A sangre completa: es la imagen principal y seimestampa pequeña y apagada.
+   El marco y el pie se overcome hacia adentro para que la pintura llegue al
+   borde, como una lámina pegada a la página y no una foto dentro de una
+   tarjeta. */
+.lam-grande{
+  position:relative;width:100vw;
+  /* 41.5rem = 664px. Es el ancho máximo que la pintura aguanta sin ampliar:
+     el asset mide 1330px, y a 2x de densidad 664px son 1328 reales. Pasarse
+     de ahí es lo que la volvía borrosa en tablet. */
+  max-width:41.5rem;
+  /* Sangre real: el contenedor tiene padding, así que con width:100vw + margin
+     auto la lámina se descentraba y se salía por la derecha. El margen
+     negativo la ancla al viewport. */
+  margin:2.6rem calc(50% - 50vw) 0;
+  border-left:0;border-right:0;border-top:1px solid var(--brass);
+}
+.lam-grande::after{display:none}   /* sin esquina de museo: es a sangre */
+.lam-grande figcaption{
+  padding:44px 1.3rem 1rem;
+  font-size:10.5px;letter-spacing:.26em;
+}
+@media (min-width:42rem){
+  /* ya no cabe a sangre: vuelve a llevar borde, y con max-width activo el
+     margen negativo descentraría la lámina, así que vuelve a auto. */
+  .lam-grande{
+    width:100%;margin-left:auto;margin-right:auto;
+    border-left:1px solid var(--brass);border-right:1px solid var(--brass);
+  }
+}
 
 .senal{
   position:relative;z-index:2;margin-top:2rem;
@@ -213,6 +250,28 @@ h1 .fecha-bajo{
   position:relative;z-index:1;
   width:min(19.75rem,100% - 2.6rem);
   margin:0 auto;
+  /* la perspectiva vive aquí: sin ella el rotateX/rotateY del JS se aplana
+     y la lámina se ve como una foto corrida */
+  perspective:900px;
+  transform-style:preserve-3d;
+}
+/* El desvanecido de la lámina se queda quieto mientras la imagen se inclina:
+   si se transformara también, el velo se despegaría de la pintura. */
+.momento .lamina{
+  transition:transform .5s var(--curva),box-shadow .5s var(--curva);
+  will-change:transform;
+  box-shadow:0 40px 80px -40px rgba(0,0,0,.95);
+}
+/* Reflejo de latón que sigue al cursor. --luz-x/--luz-y los pone el JS;
+   sin JS quedan en el centro y el brillo no aparece (--brillo:0). */
+.momento .lamina::before,.cierre .lamina::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  opacity:var(--brillo,0);
+  transition:opacity .45s var(--curva);
+  background:radial-gradient(
+    42% 42% at var(--luz-x,50%) var(--luz-y,50%),
+    rgba(232,205,126,.2),rgba(201,162,39,.07) 42%,transparent 72%);
+  mix-blend-mode:screen;
 }
 .momento .velo{
   position:absolute;inset:0;z-index:2;pointer-events:none;
@@ -238,10 +297,31 @@ h1 .fecha-bajo{
 .momento-texto .cita{margin-top:1.1rem;color:var(--brass2)}
 
 /* ═══ CARTA — la página respira en papel claro ═══ */
+/* ═══ CARTA ═══
+   El bloque claro existe para que la página respire a mitad de camino. Con
+   un plano liso se veía como un hueco blanco: un rectángulo vacío que rompe
+   la paleta. Ahora es papel: tono envejecido (no blanco), grano de fibra con
+   feTurbulence, luz que viene de arriba y filetes de latón arriba y abajo.
+   La textura va en un data-URI para no pedir un archivo extra. */
 .carta{
-  background:var(--paper);color:#241c12;
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  position:relative;color:#241c12;
+  background:linear-gradient(178deg,#f0e8d7 0%,#e7dcc5 46%,#ded1b5 100%);
+  border-top:1px solid var(--brass);
+  border-bottom:1px solid var(--brass);
+  box-shadow:inset 0 0 90px rgba(120,96,54,.14);
 }
+/* grano de fibra: turbulence, como papel de verdad */
+.carta::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23f)' opacity='.28'/%3E%3C/svg%3E");
+}
+/* las líneas del papel, muy tenues */
+.carta::after{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(180deg,rgba(120,96,54,.05) 0 1px,transparent 1px 3px);
+}
+.carta>*{position:relative;z-index:1}
 .carta .comilla{
   font-family:var(--serif);font-size:4rem;line-height:.5;color:var(--brass);
   opacity:.5;display:block;margin-bottom:1.2rem;
@@ -332,6 +412,15 @@ h1 .fecha-bajo{
    Rejilla de líneas como en la referencia: sin tarjetas, el aire y los
    filetes hacen el trabajo. */
 .cierre{position:relative;overflow:hidden;text-align:center;isolation:isolate}
+/* Lámina del cierre: misma perspectiva que el momento, para que las dos
+   pinturas del cuerpo se comporten igual al inclinar. */
+.cierre .lamina{
+  perspective:900px;transform-style:preserve-3d;
+}
+.cierre .lamina img{
+  transition:transform .5s var(--curva);
+  will-change:transform;
+}
 .versos{margin:0 0 2.4rem}
 .verso{padding:1.1rem 0;border-top:1px solid var(--rule)}
 .verso:last-child{border-bottom:1px solid var(--rule)}
@@ -428,7 +517,7 @@ h1 .fecha-bajo{
     <span class="capsula">S&aacute;bado <b>31</b> &middot; 9:30 a. m.</span>
 
     <figure class="lamina lam-grande">
-      <img src="IMAGEN_SEGUNDA" width="700" height="290" alt="La Segunda Venida: Cristo en el centro de un arco&iacute;ris de luz, rodeado de &aacute;ngeles, sobre la multitud que lo espera en la tierra.">
+      <img src="IMAGEN_SEGUNDA" width="1330" height="551" alt="La Segunda Venida: Cristo en el centro de un arco&iacute;ris de luz, rodeado de &aacute;ngeles, sobre la multitud que lo espera en la tierra.">
       <figcaption>La Segunda Venida</figcaption>
     </figure>
 
@@ -449,7 +538,7 @@ h1 .fecha-bajo{
 <!-- ═══════════ 3 · MOMENTO — EL BUEN PASTOR ═══════════ -->
 <section class="momento">
   <figure class="lamina momento-lam">
-    <img loading="lazy" src="IMAGEN_PASTOR" width="500" height="557" alt="Jesús el Buen Pastor, con su cayado, inclinándose hacia la oveja perdida entre los riscos.">
+    <img loading="lazy" src="IMAGEN_PASTOR" width="950" height="1058" alt="Jesús el Buen Pastor, con su cayado, inclinándose hacia la oveja perdida entre los riscos.">
   </figure>
   <div class="velo"></div>
   <div class="momento-texto revelar">
@@ -466,7 +555,7 @@ h1 .fecha-bajo{
 
     <p>
       Hemos orado al cielo para que Dios pueda mediar por su <strong>Espíritu Santo</strong>,
-      y sensibilice vuestro corazón a esta invitación, realizada con todo el
+      y que toque tu corazón con esta invitación, hecha con todo el
       amor de Cristo, nuestro Salvador.
     </p>
 
@@ -582,7 +671,7 @@ h1 .fecha-bajo{
 <!-- ═══════════ 8 · CIERRE ═══════════ -->
 <section class="bloque cierre">
   <figure class="lamina" style="width:min(17rem,72vw);margin:0 auto 3rem">
-    <img loading="lazy" src="IMAGEN_CORDERO" width="500" height="606" alt="Jesús sonriendo mientras sostiene en sus brazos a un corderito.">
+    <img loading="lazy" src="IMAGEN_CORDERO" width="950" height="1151" alt="Jesús sonriendo mientras sostiene en sus brazos a un corderito.">
     <figcaption>El Cordero</figcaption>
   </figure>
 
@@ -650,7 +739,12 @@ var CONFIG = {
   ENLACE_TRANSMISION: '',
 
   /* Pie de página. */
-  CREDITOS: 'Nos vemos el 31 de octubre'
+  CREDITOS: 'Nos vemos el 31 de octubre',
+
+  /* La dirección publicada. Se usa cuando alguien abre el archivo .html
+     desde su computador (protocolo file://), donde no hay una URL que
+     compartir. Si publicas en otro lado, cámbiala acá también. */
+  ENLACE: 'https://invitacion-reencuentro.vercel.app/'
 };
 
 /* ───────── mensaje que se comparte ───────── */
@@ -661,14 +755,26 @@ var MENSAJE =
   '⛪ Iglesia Adventista Empedrado\n\n' +
   '"Al que a mí viene, no le echaré fuera." — Juan 6:37\n\n' +
   '¿Vale la pena regresar? Alguien ora por ti.\n' +
-  'Te esperamos, ven tal como estás. 👇\n' + RUTA();
+  'Te esperamos, ven tal como estás. 👇\n\n' + RUTA();
 
 var CONFIRMAR =
   'Hola! 🕊️ Quiero confirmar mi asistencia al Reencuentro del sábado 31 de octubre, ' +
   '9:30 a. m. en la Iglesia Adventista Empedrado. ¿Cómo puedo ayudar?';
 
+/* ───────── la dirección con la que se comparte ─────────
+   El enlace va al FINAL del mensaje y solo, en su propia línea: así WhatsApp
+   lo reconoce como enlace y saca la vista previa con la imagen. Si el mensaje
+   lo lleva incrustado en medio de una frase, a veces no lo reconoce.
+
+   Se quita el # y el ? porque no sirven y ensucian el enlace.
+   Si la página se abrió desde el archivo local (file://), se usa la dirección
+   publicada de CONFIG.ENLACE: sin ella, el mensaje saldría sin enlace y
+   WhatsApp no mostraría nada. */
 function RUTA(){
-  return location.protocol.indexOf('http') === 0 ? location.href : '';
+  if (location.protocol.indexOf('http') === 0){
+    return location.href.split('#')[0].split('?')[0];
+  }
+  return CONFIG.ENLACE || '';
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -873,6 +979,56 @@ function RUTA(){
   ajustarMomentos();
   addEventListener('resize', ajustarMomentos);
   addEventListener('load', ajustarMomentos);
+
+  /* ── 7c · las láminas se inclinan con el cursor ──
+     Un 3D discreto: la pintura se levanta del papel unos pocos grados y un
+     reflejo de latón la acompaña. Los grados son bajos a propósito — más de
+     6 ya se ve como juguete de tienda, no como una pintura al óleo.
+
+     Solo en punteros finos (mouse/trackpad): en el celular no hay hover y se
+     vería como un temblor sin sentido. Con prefers-reduced-motion no se
+     monta nada. */
+  (function(){
+    var fino = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+    if (!fino) return;
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var MAX = 6;   // grados
+
+    function resaltar(lam, x, y){
+      var r = lam.getBoundingClientRect();
+      var cx = (x - r.left) / r.width  - 0.5;   // -0.5 .. 0.5
+      var cy = (y - r.top)  / r.height - 0.5;
+      lam.style.transform =
+        'rotateX(' + (-cy * MAX).toFixed(2) + 'deg) ' +
+        'rotateY(' + ( cx * MAX).toFixed(2) + 'deg) ' +
+        'translateZ(14px) scale(1.012)';
+      /* el reflejo va al punto opuesto: parece luz de una ventana */
+      lam.style.setProperty('--luz-x', ((0.5 - cx) * 100).toFixed(1) + '%');
+      lam.style.setProperty('--luz-y', ((0.5 - cy) * 100).toFixed(1) + '%');
+      lam.style.setProperty('--brillo', '1');
+    }
+
+    function soltar(lam){
+      lam.style.transform = '';
+      lam.style.setProperty('--brillo', '0');
+    }
+
+    var laminas = document.querySelectorAll('.momento .lamina, .cierre .lamina');
+    for (var i = 0; i < laminas.length; i++){
+      (function(lam){
+        var zona = document.createElement('div');
+        // pointermove en la lámina y en su zona sensible (más grande)
+        var mover = function(ev){
+          var r = lam.getBoundingClientRect();
+          if (ev.clientY < r.top - 120 || ev.clientY > r.bottom + 120) return;
+          resaltar(lam, ev.clientX, ev.clientY);
+        };
+        document.addEventListener('pointermove', mover, { passive: true });
+        lam.addEventListener('pointerleave', function(){ soltar(lam); });
+      })(laminas[i]);
+    }
+  })();
 
   /* ── 8 · barra de progreso + barra flotante ──
      La barra flotante se retira al llegar a los botones propios: ahí ya hay

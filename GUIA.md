@@ -21,7 +21,7 @@ los versículos, la fecha, la hora y el lugar.
 | `index.html` | **La invitación.** Es lo que se comparte. |
 | `respaldo-1080x1920.jpg` | Foto para **historia / estado** de WhatsApp |
 | `respaldo-1080x1350.jpg` | Foto para **grupos y publicaciones** |
-| `og-imagen.jpg` | La imagen que se ve al compartir el enlace |
+| `og-imagen-v2.jpg` | La imagen que se ve al compartir el enlace |
 
 Los cuatro están ya publicados. El enlace es:
 

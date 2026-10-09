@@ -12,7 +12,7 @@ Iglesia Adventista del Séptimo Día Empedrado
 | **`index.html`** | **La invitación.** Un solo archivo, sin dependencias. | 881 KB |
 | `respaldo-1080x1920.jpg` | Foto vertical para estado/historia de WhatsApp | 312 KB |
 | `respaldo-1080x1350.jpg` | Foto para grupos y publicaciones | 243 KB |
-| `og-imagen.jpg` | Miniatura del enlace (WhatsApp, Facebook) | 88 KB |
+| `og-imagen-v2.jpg` | Miniatura del enlace (WhatsApp, Facebook) | 115 KB |
 | `GUIA.md` | Instrucciones para la iglesia, sin nada técnico | — |
 | `vercel.json` | Configuración de despliegue y caché | — |
 | `index.base.html` | La plantilla. **Se edita esto, no `index.html`.** | — |

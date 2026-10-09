@@ -37,7 +37,7 @@ os.makedirs(OUT, exist_ok=True)
 ORIGENES = {
     "segunda-venida.jpg": (
         f"{DESCARGAS}/Blessed_Hope_p_65177fd1-3722-44c1-9374-f2773c37195f_700x469.webp",
-        (0.0, 0.0, 1.0, 0.62), 1120),   # fuera la multitud del pie; queda el arco y Cristo
+        (0.0, 0.0, 1.0, 0.62), 1330),   # fuera la multitud del pie; queda el arco y Cristo
     "buen-pastor.jpg": (
         f"{DESCARGAS}/Lamb_of_God-p_5fb096eb-4a3f-46be-b9ba-b39fc4e52e66_500x619.webp",
         (0.0, 0.0, 1.0, 0.90), 950),    # fuera la firma
@@ -49,9 +49,12 @@ ORIGENES = {
 # Cuánto se re-muestrea. 1.0 = no ampliar.
 #
 # El ancho objetivo sale de lo que ocupa la lámina en pantalla multiplicado por
-# la densidad de píxeles: en un celular de 390px a 3x, una lámina de 305px de
-# ancho necesita 915 píxeles reales. Con MAX_ESCALA=1.9 se cubre un celular
-# típico y una tablet sin pasarse de lo que el original da.
+# la densidad de píxeles. La Segunda Venida va a sangre completa: en un celular
+# de 430px a 3x son 1290 píxeles reales de ancho, así que necesita 1330 para no
+# quedarse corta. Las otras dos van enmarcadas y angostas, y les basta con 950.
+#
+# El tope de 1.9x es el punto donde el re-muestreo deja de aportar y solo
+# agranda el archivo: pasar de ahí es agrandar ruido.
 MAX_ESCALA = 1.9
 
 
